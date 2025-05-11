@@ -10,9 +10,9 @@ export const allPosts: BlogPostContent[] = [
     description: '學習如何使用 Vite、React 和 TypeScript 建立現代化部落格',
     date: '2025-05-11',
     author: {
-      name: 'Ian',
+      name: 'Ian Chou',
       image: '/images/author.png',
-      bio: '全棧開發者，Vite 愛好者',
+      bio: 'LC/NC開發者，AI 愛好者',
     },
     coverImage: '/images/first-post.jpg',
     tags: ['Vite', 'React', 'TypeScript'],
@@ -25,9 +25,9 @@ export const allPosts: BlogPostContent[] = [
     description: '探索在 React 專案中使用 TypeScript 的有效方法',
     date: '2025-05-11',
     author: {
-      name: 'Ian',
+      name: 'Ian Chou',
       image: '/images/author.png',
-      bio: '全棧開發者，Vite 愛好者',
+      bio: 'LC/NC開發者，AI 愛好者',
     },
     coverImage: '/images/second-post.jpg',
     tags: ['TypeScript', 'React', '最佳實踐'],
