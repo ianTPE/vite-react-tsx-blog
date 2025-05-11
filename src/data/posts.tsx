@@ -1,4 +1,4 @@
-import { BlogPostContent } from '../types/blog';
+import { type BlogPostContent } from '../types/blog';
 import FirstPostContent from '../components/blog/posts/FirstPost';
 import SecondPostContent from '../components/blog/posts/SecondPost';
 
@@ -17,7 +17,7 @@ export const allPosts: BlogPostContent[] = [
     coverImage: '/placeholder.svg',
     tags: ['Vite', 'React', 'TypeScript'],
     readTime: 5,
-    renderContent: FirstPostContent
+    renderContent: () => <FirstPostContent />
   },
   {
     slug: 'second-post',
@@ -32,7 +32,7 @@ export const allPosts: BlogPostContent[] = [
     coverImage: '/placeholder.svg',
     tags: ['TypeScript', 'React', '最佳實踐'],
     readTime: 7,
-    renderContent: SecondPostContent
+    renderContent: () => <SecondPostContent />
   },
 ];
 

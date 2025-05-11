@@ -16,5 +16,5 @@ export interface BlogPost {
 }
 
 export interface BlogPostContent extends BlogPost {
-  renderContent: () => JSX.Element; // 函數返回 JSX 而不是存儲 Markdown
+  renderContent: () => React.JSX.Element; // 函數返回 JSX 而不是存儲 Markdown
 }

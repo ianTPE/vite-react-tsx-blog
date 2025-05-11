@@ -11,7 +11,7 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,  // 關閉這個來避免導入類型的錯誤
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
