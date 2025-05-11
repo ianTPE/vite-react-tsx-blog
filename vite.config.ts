@@ -8,9 +8,4 @@ export default defineConfig({
     react(),
     Inspect() // 可視化分析構建產物
   ],
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './src/test/setup.ts',
-  },
 })
