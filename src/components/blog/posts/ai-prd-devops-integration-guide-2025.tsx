@@ -4,7 +4,6 @@ import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 // 導入圖表組件
 import { CoreArchitecture } from '../../charts/CoreArchitecture';
-import { KeyMetrics } from '../../charts/KeyMetrics';
 import { TechStackAdoption } from '../../charts/TechStackAdoption';
 import { IndustryDistribution } from '../../charts/IndustryDistribution';
 import { BenefitComparisonRadar } from '../../charts/BenefitComparisonRadar';
@@ -40,45 +39,6 @@ const AiPrdDevopsGuidePost = () => {
     date: "2025-01-13",
     tags: ["AI", "PRD", "DevOps", "軟體工程", "數位轉型"]
   };
-
-  // 準備圖表數據
-  const benefitsData = {
-    labels: ['需求準確率', '開發週期', '代碼缺陷率', '部署成功率', '運維響應時間'],
-    datasets: [
-      {
-        label: '傳統模式',
-        data: [65, 100, 100, 85, 100],
-        fill: true,
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgb(255, 99, 132)',
-        pointBackgroundColor: 'rgb(255, 99, 132)',
-      },
-      {
-        label: 'AI 賦能模式',
-        data: [92, 50, 53.3, 98, 10],
-        fill: true,
-        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-        borderColor: 'rgb(54, 162, 235)',
-        pointBackgroundColor: 'rgb(54, 162, 235)',
-      }
-    ]
-  };
-
-  const industryData = [
-    { industry: '智能製造', percentage: 28 },
-    { industry: '金融風控', percentage: 24 },
-    { industry: '醫療健康', percentage: 18 },
-    { industry: '零售電商', percentage: 20 },
-    { industry: '汽車製造', percentage: 10 }
-  ];
-
-  const techStackData = [
-    { technology: 'GitHub Copilot', adoption: 45 },
-    { technology: 'Kubernetes', adoption: 65 },
-    { technology: 'MLflow', adoption: 35 },
-    { technology: 'Datadog AI', adoption: 30 },
-    { technology: 'TensorFlow', adoption: 55 }
-  ];
 
   return (
     <article className="max-w-4xl mx-auto px-4 py-8">
@@ -194,7 +154,7 @@ const AiPrdDevopsGuidePost = () => {
       <h2 id="-" className="text-2xl font-semibold mt-8 mb-4">三、關鍵技術與工具鏈</h2>
       
       <div className="mb-6">
-        <TechStackAdoption data={techStackData} />
+        <TechStackAdoption />
       </div>
 
       <div className="overflow-x-auto mb-6">
@@ -245,7 +205,7 @@ const AiPrdDevopsGuidePost = () => {
       <h2 id="-" className="text-2xl font-semibold mt-8 mb-4">四、產業應用場景深度解析</h2>
 
       <div className="mb-6">
-        <IndustryDistribution data={industryData} />
+        <IndustryDistribution />
       </div>
 
       <h3 id="4-1-" className="text-xl font-semibold mt-6 mb-4">4.1 智能製造：預測性維護與產線優化</h3>
@@ -347,7 +307,7 @@ const campaignRequirements = socialTrendAnalyzer
       <h3 id="5-1-" className="text-xl font-semibold mt-6 mb-4">5.1 量化效益評估</h3>
 
       <div className="mb-6">
-        <BenefitComparisonRadar data={benefitsData} />
+        <BenefitComparisonRadar />
       </div>
 
       <div className="overflow-x-auto mb-6">
