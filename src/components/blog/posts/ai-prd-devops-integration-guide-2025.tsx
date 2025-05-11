@@ -160,7 +160,7 @@ const campaignRequirements = socialTrendAnalyzer
     <article className="max-w-4xl mx-auto px-4 py-8">
 
       <header className="mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4 leading-relaxed">
           AI 賦能軟體工程：PRD 與 DevOps 的智能化革命
         </h1>
         <p className="text-gray-600 text-lg">
