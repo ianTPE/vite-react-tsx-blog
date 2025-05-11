@@ -29,8 +29,12 @@ const PostHeader: React.FC<PostHeaderProps> = ({ post }) => {
         </div>
       </div>
       {post.coverImage && (
-        <div className="post-cover-image">
-          <img src={post.coverImage} alt={post.title} />
+        <div className="post-cover-image overflow-hidden rounded-lg shadow-lg" style={{ height: '300px', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#f9fafb' }}>
+          <img 
+            src={post.coverImage} 
+            alt={post.title} 
+            className="max-h-full object-contain"
+          />
         </div>
       )}
     </div>
