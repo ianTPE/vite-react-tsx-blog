@@ -1,4 +1,18 @@
-import type React from 'react';
+import React, { lazy, Suspense } from 'react';
+
+// 動態導入圖表組件
+const LcncRankingChart = lazy(() => import('../../charts/lcnc-ranking-chart'));
+const LcncProjectCharacteristics = lazy(() => import('../../charts/lcnc-project-characteristics'));
+const LcncPricingSkills = lazy(() => import('../../charts/lcnc-pricing-skills'));
+const LcncAdoptionTrends = lazy(() => import('../../charts/lcnc-adoption-trends'));
+const LcncRankComparison = lazy(() => import('../../charts/lcnc-rank-comparison'));
+
+// 載入中組件
+const ChartLoading = () => (
+  <div className="flex justify-center items-center h-64 bg-gray-50 rounded-lg">
+    <div className="text-gray-500">載入圖表中...</div>
+  </div>
+);
 
 const FreelancerGuidePost: React.FC = () => {
   return (
@@ -7,9 +21,9 @@ const FreelancerGuidePost: React.FC = () => {
 <p>在2025年的數位環境中，低代碼/無代碼（LC/NC）平台已從新興技術成長為主流開發方法。根據Gartner的預測，到2025年底，70%的新企業應用將使用低代碼或無代碼技術建構。對自由工作者和短期合約顧問而言，掌握這些工具不僅能夠快速交付項目，更能夠開拓全新的市場機會。<br/>
 然而，並非所有低代碼/無代碼應用領域都提供相同的就業前景。基於最新市場趨勢、客戶需求和專案特性，本文將深入剖析六大應用類型，從最適合自由工作者的領域到較不適合的領域，幫助您在這個蓬勃發展的市場中找到最佳定位。</p>
 <div className="w-full overflow-x-auto">
-  <div className="flex justify-center items-center h-64 bg-gray-50 rounded-lg">
-    <div className="text-gray-500">圖表：低代碼/無代碼應用領域排名</div>
-  </div>
+  <Suspense fallback={<ChartLoading />}>
+    <LcncRankingChart />
+  </Suspense>
 </div>
 
 <h2 className="text-2xl md:text-3xl font-bold tracking-tight mt-8 mb-4 text-black dark:text-white">應用領域排名與深度分析</h2>
@@ -138,9 +152,9 @@ const FreelancerGuidePost: React.FC = () => {
 </ul>
 <p><strong>市場挑戰</strong>：企業對數據隱私和安全的考慮往往使他們不願外包這類工作，除非是特定分析項目。</p>
 <div className="w-full overflow-x-auto">
-  <div className="flex justify-center items-center h-64 bg-gray-50 rounded-lg">
-    <div className="text-gray-500">圖表：專案特性比較</div>
-  </div>
+  <Suspense fallback={<ChartLoading />}>
+    <LcncProjectCharacteristics />
+  </Suspense>
 </div>
 
 <h2 className="text-2xl md:text-3xl font-bold tracking-tight mt-8 mb-4 text-black dark:text-white">各排名間的差異與共識</h2>
@@ -161,9 +175,9 @@ const FreelancerGuidePost: React.FC = () => {
 </ol>
 
 <div className="w-full overflow-x-auto">
-  <div className="flex justify-center items-center h-64 bg-gray-50 rounded-lg">
-    <div className="text-gray-500">圖表：定價與技能需求</div>
-  </div>
+  <Suspense fallback={<ChartLoading />}>
+    <LcncPricingSkills />
+  </Suspense>
 </div>
 
 <h2 className="text-2xl md:text-3xl font-bold tracking-tight mt-8 mb-4 text-black dark:text-white">自由工作者的策略建議</h2>
@@ -207,9 +221,9 @@ const FreelancerGuidePost: React.FC = () => {
 <li>開發可重用模板和組件</li>
 </ul>
 <div className="w-full overflow-x-auto">
-  <div className="flex justify-center items-center h-64 bg-gray-50 rounded-lg">
-    <div className="text-gray-500">圖表：採用趨勢</div>
-  </div>
+  <Suspense fallback={<ChartLoading />}>
+    <LcncAdoptionTrends />
+  </Suspense>
 </div>
 <h2 className="text-2xl md:text-3xl font-bold tracking-tight mt-8 mb-4 text-black dark:text-white">未來趨勢與機會</h2>
 <h3 className="text-xl md:text-2xl font-bold tracking-tight mt-6 mb-3 text-black dark:text-white">即將到來的發展方向</h3>
@@ -232,9 +246,9 @@ const FreelancerGuidePost: React.FC = () => {
 <p>隨著技術的不斷進步和市場的持續成熟，這些排名可能會發生變化。然而，理解每個領域背後的基本驅動因素和客戶需求將使您能夠靈活調整策略，並在這個充滿活力的行業中取得長期成功。</p>
 <p>最後，無論您選擇專注於哪個領域，持續學習和適應變化將是在低代碼/無代碼自由工作領域取得成功的關鍵。隨著這些平台變得越來越強大，掌握它們的能力將使您成為數字轉型時代不可或缺的專業人士。</p>
 <div className="w-full overflow-x-auto">
-  <div className="flex justify-center items-center h-64 bg-gray-50 rounded-lg">
-    <div className="text-gray-500">圖表：排名比較</div>
-  </div>
+  <Suspense fallback={<ChartLoading />}>
+    <LcncRankComparison />
+  </Suspense>
 </div>
     </div>
   );
