@@ -10,9 +10,11 @@ const Home: React.FC = () => {
   return (
     <Layout>
       <div className="home-page">
-        <section className="hero">
-          <h1>歡迎來到 Ian's Blog</h1>
-          <p>使用 Vite + React + TypeScript 構建的現代化部落格</p>
+        <section className="hero" style={{ backgroundImage: 'url(/images/hero-background.jpg)' }}>
+          <div className="hero-overlay">
+            <h1>歡迎來到 Ian's Blog</h1>
+            <p>使用 Vite + React + TypeScript 構建的現代化部落格</p>
+          </div>
         </section>
         
         <section className="recent-posts">

@@ -11,10 +11,10 @@ export const allPosts: BlogPostContent[] = [
     date: '2025-05-11',
     author: {
       name: 'Ian',
-      image: '/placeholder.svg',
+      image: '/images/author.png',
       bio: '全棧開發者，Vite 愛好者',
     },
-    coverImage: '/placeholder.svg',
+    coverImage: '/images/first-post.jpg',
     tags: ['Vite', 'React', 'TypeScript'],
     readTime: 5,
     renderContent: () => <FirstPostContent />
@@ -26,10 +26,10 @@ export const allPosts: BlogPostContent[] = [
     date: '2025-05-11',
     author: {
       name: 'Ian',
-      image: '/placeholder.svg',
+      image: '/images/author.png',
       bio: '全棧開發者，Vite 愛好者',
     },
-    coverImage: '/placeholder.svg',
+    coverImage: '/images/second-post.jpg',
     tags: ['TypeScript', 'React', '最佳實踐'],
     readTime: 7,
     renderContent: () => <SecondPostContent />
