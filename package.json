@@ -13,9 +13,12 @@
     "test:coverage": "vitest --coverage"
   },
   "dependencies": {
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "mermaid": "^11.6.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.0",
+    "react-syntax-highlighter": "^15.6.1",
     "recharts": "^2.15.3"
   },
   "devDependencies": {
