@@ -8,4 +8,5 @@ export default defineConfig({
     react(),
     Inspect() // 可視化分析構建產物
   ],
+  base: '/', // 確保路由在部署時正常工作
 })

@@ -1,6 +1,6 @@
-# Vite + React + TypeScript 部落格專案
+# Vite + React + TypeScript 部落格
 
-這是一個使用 Vite、React 和 TypeScript 建立的現代化部落格專案。
+一個使用 Vite、React 和 TypeScript 建立的現代化部落格網站。
 
 ## 特性
 
@@ -8,9 +8,20 @@
 - ⚛️ **React 19** - 最新版本的 React
 - 🔷 **TypeScript** - 類型安全的 JavaScript
 - 🎨 **Tailwind CSS v4** - 實用優先的 CSS 框架
+- 🔀 **React Router** - 客戶端路由
+- 📝 **組件化部落格文章** - 使用 TSX 組件而非 Markdown
 - 🧪 **Vitest** - 由 Vite 驅動的極速單元測試框架
 - 🔍 **Vite Plugin Inspect** - 可視化分析構建產物
 - 🔥 **HMR** - 熱模塊替換，即時預覽更改
+
+## 部落格結構
+
+本部落格採用組件化的架構，每篇文章都是獨立的 React 組件：
+
+- **文章數據** - 存儲在 `src/data/posts.ts`
+- **文章內容** - 位於 `src/components/blog/posts/` 目錄
+- **布局組件** - 位於 `src/components/layout/` 目錄
+- **頁面組件** - 位於 `src/pages/` 目錄
 
 ## 開始使用
 
@@ -60,50 +71,81 @@ npm run test:ui
 npm run test:coverage
 ```
 
-## 開發工具
+## 添加新文章
 
-### Vite Plugin Inspect
+1. 在 `src/components/blog/posts/` 創建新的 TSX 文件
+2. 在 `src/data/posts.ts` 添加文章元數據
+3. 導入新的文章組件
 
-在開發模式下，訪問 `http://localhost:5173/__inspect/` 可以查看：
-- 模組依賴關係
-- 轉換過程
-- 插件執行順序
-- 構建分析
+例如：
 
-### ESLint
+```typescript
+// src/components/blog/posts/NewPost.tsx
+import React from 'react';
 
-```bash
-npm run lint
+const NewPost: React.FC = () => {
+  return (
+    <div className="post-content">
+      <p>您的文章內容...</p>
+    </div>
+  );
+};
+
+export default NewPost;
 ```
 
-## 技術堆疊
+```typescript
+// src/data/posts.ts
+import NewPostContent from '../components/blog/posts/NewPost';
 
-- **Vite 6.3.5** - 建構工具
-- **React 19.1.0** - UI 框架
-- **TypeScript 5.8.3** - 類型系統
-- **Tailwind CSS 4.1.6** - CSS 框架
-- **Vitest 3.1.3** - 測試框架
-- **@testing-library/react** - React 測試工具
-- **vite-plugin-inspect** - 開發分析工具
+export const allPosts: BlogPostContent[] = [
+  // ... 其他文章
+  {
+    slug: 'new-post',
+    title: '新文章標題',
+    description: '文章描述',
+    date: '2025-05-11',
+    author: {
+      name: '作者名稱',
+    },
+    tags: ['標籤1', '標籤2'],
+    readTime: 5,
+    renderContent: NewPostContent
+  }
+];
+```
 
 ## 專案結構
 
 ```
 .
+├── public/              # 靜態資源
+│   └── images/         # 圖片資源
 ├── src/
-│   ├── assets/         # 靜態資源
-│   ├── test/           # 測試設置
+│   ├── components/     # React 組件
+│   │   ├── blog/       # 部落格相關組件
+│   │   │   └── posts/  # 文章內容組件
+│   │   └── layout/     # 布局組件
+│   ├── data/           # 數據管理
+│   ├── pages/          # 頁面組件
+│   ├── styles/         # CSS 樣式
+│   ├── types/          # TypeScript 類型定義
 │   ├── App.tsx         # 主應用組件
-│   ├── App.test.tsx    # 應用測試
 │   ├── main.tsx        # 應用入口
 │   └── index.css       # 全局樣式
-├── dist/               # 建構輸出
 ├── vite.config.ts      # Vite 配置
 ├── vitest.config.ts    # Vitest 配置
 ├── postcss.config.js   # PostCSS 配置
-├── tsconfig.json       # TypeScript 配置
 └── package.json        # 專案配置
 ```
+
+## 部署
+
+本專案可以輕鬆部署到各種平台：
+
+- **Vercel** - 零配置部署
+- **Netlify** - 簡單的持續部署
+- **GitHub Pages** - 免費靜態站點託管
 
 ## License
 
