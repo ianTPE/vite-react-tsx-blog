@@ -10,15 +10,13 @@ import { BenefitComparisonRadar } from '../../charts/BenefitComparisonRadar';
 import { ROITrends } from '../../charts/ROITrends';
 
 // Mermaid 圖表組件
-const MermaidChart = ({ chart }: { chart: string }) => {
-  return (
-    <div>
-      <pre className="mermaid">
-        {chart}
-      </pre>
+const MermaidChart = ({ chart }: { chart: string }) => (
+  <div className="mermaid-container">
+    <div className="mermaid">
+      {chart}
     </div>
-  );
-};
+  </div>
+);
 
 // 在頁面載入時初始化 Mermaid
 if (typeof window !== 'undefined') {
@@ -59,11 +57,7 @@ const AiPrdDevopsGuidePost = () => {
         <CoreArchitecture />
       </div>
 
-      <pre>
-        <code>{`用戶數據 → AI 分析引擎 → 智能 PRD → DevOps 自動化 → 生產環境
-   ↑                                                    ↓
-   └──────────── 運營數據反饋 ←──────────────────────────┘`}</code>
-      </pre>
+
       
       <p>這個閉環系統的三個核心組件相互協作：</p>
 
@@ -141,43 +135,43 @@ const AiPrdDevopsGuidePost = () => {
 
       <table border={1}>
         <thead>
-          <tr>
-            <th>領域</th>
-            <th>技術/工具</th>
-            <th>功能範例</th>
-            <th>實施要點</th>
+          <tr style={{ border: '1px solid #333' }}>
+            <th style={{ border: '1px solid #333', padding: '8px', background: '#f8f8f8' }}>領域</th>
+            <th style={{ border: '1px solid #333', padding: '8px', background: '#f8f8f8' }}>技術/工具</th>
+            <th style={{ border: '1px solid #333', padding: '8px', background: '#f8f8f8' }}>功能範例</th>
+            <th style={{ border: '1px solid #333', padding: '8px', background: '#f8f8f8' }}>實施要點</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><strong>AI 需求分析</strong></td>
-            <td>GPT-4、BERT<br />MonkeyLearn<br />AWS Comprehend</td>
-            <td>從非結構化文本提取需求關鍵詞<br />情感分析與主題聚類<br />自動生成用戶故事</td>
-            <td>需要高質量標註數據<br />定期微調模型參數</td>
+          <tr style={{ border: '1px solid #333' }}>
+            <td style={{ border: '1px solid #333', padding: '8px' }}><strong>AI 需求分析</strong></td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>GPT-4、BERT<br />MonkeyLearn<br />AWS Comprehend</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>從非結構化文本提取需求關鍵詞<br />情感分析與主題聚類<br />自動生成用戶故事</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>需要高質量標註數據<br />定期微調模型參數</td>
           </tr>
-          <tr>
-            <td><strong>智能編碼</strong></td>
-            <td>GitHub Copilot<br />Tabnine<br />Amazon CodeWhisperer</td>
-            <td>根據 PRD 描述生成代碼片段<br />自動補全測試用例<br />安全最佳實踐建議</td>
-            <td>需配合代碼審查<br />設置合規性檢查點</td>
+          <tr style={{ border: '1px solid #333' }}>
+            <td style={{ border: '1px solid #333', padding: '8px' }}><strong>智能編碼</strong></td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>GitHub Copilot<br />Tabnine<br />Amazon CodeWhisperer</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>根據 PRD 描述生成代碼片段<br />自動補全測試用例<br />安全最佳實踐建議</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>需配合代碼審查<br />設置合規性檢查點</td>
           </tr>
-          <tr>
-            <td><strong>自適應流水線</strong></td>
-            <td>Harness AI<br />Azure ML Pipelines<br />Jenkins X</td>
-            <td>動態選擇測試範圍<br />預測部署風險<br />自動回滾決策</td>
-            <td>建立完整監控指標<br />設定風險閾值</td>
+          <tr style={{ border: '1px solid #333' }}>
+            <td style={{ border: '1px solid #333', padding: '8px' }}><strong>自適應流水線</strong></td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>Harness AI<br />Azure ML Pipelines<br />Jenkins X</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>動態選擇測試範圍<br />預測部署風險<br />自動回滾決策</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>建立完整監控指標<br />設定風險閾值</td>
           </tr>
-          <tr>
-            <td><strong>智能運維</strong></td>
-            <td>Moogsoft（AIOps）<br />Google Cloud AIOps<br />Datadog AI</td>
-            <td>日誌異常檢測<br />自動故障根因分析<br />預測性告警</td>
-            <td>統一日誌格式<br />建立知識庫</td>
+          <tr style={{ border: '1px solid #333' }}>
+            <td style={{ border: '1px solid #333', padding: '8px' }}><strong>智能運維</strong></td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>Moogsoft（AIOps）<br />Google Cloud AIOps<br />Datadog AI</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>日誌異常檢測<br />自動故障根因分析<br />預測性告警</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>統一日誌格式<br />建立知識庫</td>
           </tr>
-          <tr>
-            <td><strong>數據閉環</strong></td>
-            <td>Elasticsearch + Kibana<br />MLflow<br />Snowflake</td>
-            <td>用戶行為分析<br />模型訓練追蹤<br />數據湖管理</td>
-            <td>確保數據一致性<br />實施隱私保護</td>
+          <tr style={{ border: '1px solid #333' }}>
+            <td style={{ border: '1px solid #333', padding: '8px' }}><strong>數據閉環</strong></td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>Elasticsearch + Kibana<br />MLflow<br />Snowflake</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>用戶行為分析<br />模型訓練追蹤<br />數據湖管理</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>確保數據一致性<br />實施隱私保護</td>
           </tr>
         </tbody>
       </table>
@@ -292,49 +286,49 @@ const campaignRequirements = socialTrendAnalyzer
 
       <table border={1}>
         <thead>
-          <tr>
-            <th>指標類別</th>
-            <th>傳統模式</th>
-            <th>AI 賦能模式</th>
-            <th>改善幅度</th>
+          <tr style={{ border: '1px solid #333' }}>
+            <th style={{ border: '1px solid #333', padding: '8px', background: '#f8f8f8' }}>指標類別</th>
+            <th style={{ border: '1px solid #333', padding: '8px', background: '#f8f8f8' }}>傳統模式</th>
+            <th style={{ border: '1px solid #333', padding: '8px', background: '#f8f8f8' }}>AI 賦能模式</th>
+            <th style={{ border: '1px solid #333', padding: '8px', background: '#f8f8f8' }}>改善幅度</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>需求準確率</td>
-            <td>65%</td>
-            <td>92%</td>
-            <td>+41.5%</td>
+          <tr style={{ border: '1px solid #333' }}>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>需求準確率</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>65%</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>92%</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>+41.5%</td>
           </tr>
-          <tr>
-            <td>開發週期</td>
-            <td>8-12 週</td>
-            <td>4-6 週</td>
-            <td>-50%</td>
+          <tr style={{ border: '1px solid #333' }}>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>開發週期</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>8-12 週</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>4-6 週</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>-50%</td>
           </tr>
-          <tr>
-            <td>代碼缺陷率</td>
-            <td>15‰</td>
-            <td>8‰</td>
-            <td>-46.7%</td>
+          <tr style={{ border: '1px solid #333' }}>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>代碼缺陷率</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>15‰</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>8‰</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>-46.7%</td>
           </tr>
-          <tr>
-            <td>部署成功率</td>
-            <td>85%</td>
-            <td>98%</td>
-            <td>+15.3%</td>
+          <tr style={{ border: '1px solid #333' }}>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>部署成功率</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>85%</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>98%</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>+15.3%</td>
           </tr>
-          <tr>
-            <td>運維響應時間</td>
-            <td>30 分鐘</td>
-            <td>3 分鐘</td>
-            <td>-90%</td>
+          <tr style={{ border: '1px solid #333' }}>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>運維響應時間</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>30 分鐘</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>3 分鐘</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>-90%</td>
           </tr>
-          <tr>
-            <td>總體 ROI</td>
-            <td>-</td>
-            <td>-</td>
-            <td>3.2x</td>
+          <tr style={{ border: '1px solid #333' }}>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>總體 ROI</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>-</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>-</td>
+            <td style={{ border: '1px solid #333', padding: '8px' }}>3.2x</td>
           </tr>
         </tbody>
       </table>
