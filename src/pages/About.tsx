@@ -1,14 +1,9 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
-import SEO from '../components/SEO';
 
 const About: React.FC = () => {
   return (
     <Layout>
-      <SEO 
-        title="關於我們"
-        description="這是一個使用 Vite + React + TypeScript 構建的現代化部落格平台"
-      />
       <div className="about-page">
         <h1>關於我們</h1>
         <p>

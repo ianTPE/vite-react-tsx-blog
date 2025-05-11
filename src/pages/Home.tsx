@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
 import PostCard from '../components/blog/PostCard';
-import SEO from '../components/SEO';
 import { getAllPosts } from '../data/posts';
 
 const Home: React.FC = () => {
@@ -10,11 +9,6 @@ const Home: React.FC = () => {
 
   return (
     <Layout>
-      <SEO 
-        title="首頁"
-        description="使用 Vite + React + TypeScript 構建的現代化部落格"
-        image="/images/hero-background.jpg"
-      />
       <div className="home-page">
         <section className="hero" style={{ backgroundImage: 'url(/images/hero-background.jpg)' }}>
           <div className="hero-overlay">
