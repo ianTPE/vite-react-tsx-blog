@@ -75,6 +75,9 @@ const SubSection: React.FC<SectionProps> = ({ title, children }) => (
 // 刪除不再使用的 DiagramBlock 組件
 
 const AiPrdDevopsGuidePost: React.FC = () => {
+  // 封面圖片
+  const coverImage = '/images/202505/ai-prd-devops-integration-guide-2025.png';
+  
   const toolsTableData: TableData = {
     headers: ['領域', '技術/工具', '功能範例', '實施要點'],
     rows: [
@@ -157,6 +160,15 @@ const campaignRequirements = socialTrendAnalyzer
 
   return (
     <article className="max-w-4xl mx-auto px-4 py-8">
+      {/* 封面圖片 */}
+      <div className="mb-8 overflow-hidden rounded-lg shadow-lg" style={{ height: '250px', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#f9fafb' }}>
+        <img 
+          src={coverImage} 
+          alt="AI + PRD + DevOps：軟體開發智能化革命完整指南 2025" 
+          className="max-h-full object-contain"
+        />
+      </div>
+
       <header className="mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           AI 賦能軟體工程：PRD 與 DevOps 的智能化革命
