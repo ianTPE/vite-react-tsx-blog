@@ -1,4 +1,4 @@
-import React from 'react';
+// 移除 React import，因為專案使用新的 JSX Transform
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
