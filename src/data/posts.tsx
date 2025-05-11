@@ -8,7 +8,7 @@ import SecondPostContent from '../components/blog/posts/SecondPost';
 // 動態導入較大的文章組件
 const LowCodeNoCodeMarketTrendsContent = lazy(() => import('../components/blog/posts/low-code-no-code-market-trends-2025-career-transition'));
 const FreelancerGuidePost = lazy(() => import('../components/blog/posts/2025-freelancer-guide-low-code-no-code-development-applications-ranking'));
-const AiPrdDevopsGuidePost = lazy(() => import('../components/blog/posts/ai-prd-devops-integration-guide-2025-new'));
+const AiPrdDevopsGuidePost = lazy(() => import('../components/blog/posts/ai-prd-devops-integration-guide-2025'));
 
 // 文章內容將由 TSX 組件渲染而不是 Markdown
 export const allPosts: BlogPostContent[] = [
