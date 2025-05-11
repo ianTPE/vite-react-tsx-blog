@@ -1,4 +1,4 @@
-import React from 'react';
+// React 會被自動導入
 import {
   RadarChart,
   PolarGrid,

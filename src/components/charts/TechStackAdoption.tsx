@@ -1,4 +1,4 @@
-import React from 'react';
+// React 會被自動導入
 import {
   BarChart,
   Bar,
@@ -27,11 +27,11 @@ export const TechStackAdoption = () => (
         <XAxis type="number" domain={[0, 100]} />
         <YAxis dataKey="category" type="category" width={100} />
         <Tooltip 
-          formatter={(value, name) => [`${value}%`, '採用率']}
+          formatter={(value) => [`${value}%`, '採用率']}
           contentStyle={{ backgroundColor: '#f9fafb', border: '1px solid #e5e7eb' }}
         />
         <Bar dataKey="adoption" fill="#6366f1" radius={[0, 4, 4, 0]}>
-          {techStackData.map((entry, index) => (
+          {techStackData.map((_, index) => (
             <Cell key={`cell-${index}`} fill={['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'][index]} />
           ))}
         </Bar>

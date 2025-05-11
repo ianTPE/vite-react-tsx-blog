@@ -1,4 +1,4 @@
-import React from 'react';
+// React 會被自動導入
 
 export const RoadmapGantt = () => (
   <div className="w-full p-6 bg-white rounded-lg shadow-lg mb-8">

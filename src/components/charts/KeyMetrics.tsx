@@ -1,4 +1,4 @@
-import React from 'react';
+// 不需要顯式導入 React
 
 export const KeyMetrics = () => (
   <div className="w-full p-6 bg-white rounded-lg shadow-lg">
