@@ -112,8 +112,8 @@ const RankingChart = () => {
               tick={{ fontSize: isMobile ? 12 : 14 }}
             />
             <Tooltip 
-              formatter={(value) => [`前景評分: ${value}/100`, '']}
-              labelFormatter={(label) => {
+              formatter={(value: number) => [`前景評分: ${value}/100`, '']}
+              labelFormatter={(label: string) => {
                 // 在工具提示中顯示完整名稱
                 const fullItem = chartData.find(item => item.displayName === label);
                 return fullItem ? fullItem.name : label;

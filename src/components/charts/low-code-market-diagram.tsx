@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 const LowCodeMarketDiagram = () => {
@@ -49,7 +48,7 @@ const LowCodeMarketDiagram = () => {
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="year" />
               <YAxis label={{ value: '市場規模 (十億美元)', angle: -90, position: 'insideLeft' }} />
-              <Tooltip formatter={(value) => [`${value}十億美元`, '市場規模']} />
+              <Tooltip formatter={(value: number) => [`${value}十億美元`, '市場規模']} />
               <Legend />
               <Bar dataKey="value" name="市場規模 (十億美元)" fill="#8884d8" />
             </BarChart>
@@ -72,13 +71,13 @@ const LowCodeMarketDiagram = () => {
                   fill="#8884d8"
                   dataKey="value"
                   nameKey="name"
-                  label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                  label={({ name, percent }: { name: string; percent: number }) => `${name}: ${(percent * 100).toFixed(0)}%`}
                 >
-                  {platformTypes.map((entry, index) => (
+                  {platformTypes.map((_, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
-                <Tooltip formatter={(value) => [`${value}%`, '市場份額']} />
+                <Tooltip formatter={(value: number) => [`${value}%`, '市場份額']} />
               </PieChart>
             </ResponsiveContainer>
           </div>
@@ -106,13 +105,13 @@ const LowCodeMarketDiagram = () => {
                   fill="#8884d8"
                   dataKey="value"
                   nameKey="name"
-                  label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                  label={({ name, percent }: { name: string; percent: number }) => `${name}: ${(percent * 100).toFixed(0)}%`}
                 >
-                  {applicationAreas.map((entry, index) => (
+                  {applicationAreas.map((_, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
-                <Tooltip formatter={(value) => [`${value}%`, '市場份額']} />
+                <Tooltip formatter={(value: number) => [`${value}%`, '市場份額']} />
               </PieChart>
             </ResponsiveContainer>
           </div>

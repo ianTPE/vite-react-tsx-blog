@@ -1,5 +1,5 @@
 import React from 'react';
-import { LowCodeMarketDiagram } from '@/components/charts';
+import LowCodeMarketDiagram from '../../charts/low-code-market-diagram';
 
 const LowCodeNoCodeMarketTrendsContent: React.FC = () => {
   return (

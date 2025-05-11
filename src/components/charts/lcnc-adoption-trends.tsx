@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar } from 'recharts';
 
 const MarketTrendsAndAdoption = () => {
@@ -58,7 +58,7 @@ const MarketTrendsAndAdoption = () => {
     '#A4DE6C', '#D0ED57', '#83a6ed', '#8dd1e1', '#ffc658', '#d0ed57'
   ];
 
-  const CustomizedTooltip = ({ active, payload, label }) => {
+  const CustomizedTooltip = ({ active, payload }: { active?: boolean; payload?: any[] }) => {
     if (active && payload && payload.length) {
       return (
         <div className="bg-white p-3 border border-gray-200 shadow-md rounded">
@@ -86,10 +86,10 @@ const MarketTrendsAndAdoption = () => {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="year" />
             <YAxis 
-              tickFormatter={(value) => `$${value}B`} 
-              label={isMobile ? null : { value: '市場規模 (十億美元)', angle: -90, position: 'insideLeft', offset: 0 }} 
+              tickFormatter={(value: number) => `$${value}B`} 
+              label={isMobile ? undefined : { value: '市場規模 (十億美元)', angle: -90, position: 'insideLeft', offset: 0 }} 
             />
-            <Tooltip formatter={(value) => [`$${value}B`, '市場規模']} />
+            <Tooltip formatter={(value: number) => [`$${value}B`, '市場規模']} />
             <Legend />
             <Line 
               type="monotone" 
@@ -98,7 +98,7 @@ const MarketTrendsAndAdoption = () => {
               stroke="#4C9AFF" 
               strokeWidth={2}
               activeDot={{ r: 8 }} 
-              dot={(props) => {
+              dot={(props: any) => {
                 if (props.payload.projected) {
                   return (
                     <svg x={props.cx - 5} y={props.cy - 5} width={10} height={10} fill="#4C9AFF" viewBox="0 0 10 10">
@@ -136,11 +136,11 @@ const MarketTrendsAndAdoption = () => {
                   fill="#8884d8"
                   dataKey="value"
                   nameKey="name"
-                  label={({ name, percent }) => isMobile 
+                  label={({ name, percent }: { name: string; percent: number }) => isMobile 
                     ? `${(percent * 100).toFixed(0)}%` 
                     : `${name}: ${(percent * 100).toFixed(0)}%`}
                 >
-                  {industryAdoptionData.map((entry, index) => (
+                  {industryAdoptionData.map((_, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
@@ -162,7 +162,7 @@ const MarketTrendsAndAdoption = () => {
                 : { top: 5, right: 30, left: 150, bottom: 5 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis type="number" domain={[0, 100]} tickFormatter={(value) => `${value}%`} />
+              <XAxis type="number" domain={[0, 100]} tickFormatter={(value: number) => `${value}%`} />
               <YAxis 
                 dataKey={isMobile ? "shortName" : "name"} 
                 type="category" 
@@ -170,8 +170,8 @@ const MarketTrendsAndAdoption = () => {
                 tick={{ fontSize: isMobile ? 11 : 14 }}
               />
               <Tooltip 
-                formatter={(value) => [`${value}%`, '企業佔比']} 
-                labelFormatter={(label) => {
+                formatter={(value: number) => [`${value}%`, '企業佔比']} 
+                labelFormatter={(label: string) => {
                   // 在移動版中顯示完整名稱
                   if (isMobile) {
                     const fullItem = adoptionReasonsData.find(item => item.shortName === label);

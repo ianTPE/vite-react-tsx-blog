@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine } from 'recharts';
 
 const PricingAndSkills = () => {
@@ -55,7 +54,7 @@ const PricingAndSkills = () => {
     }
   ];
 
-  const CustomTooltip = ({ active, payload, label }) => {
+  const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: any[] }) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
@@ -66,7 +65,7 @@ const PricingAndSkills = () => {
           <div className="mt-2">
             <p className="font-semibold">核心技能要求:</p>
             <ul className="list-disc ml-4 mt-1">
-              {data.skills.map((skill, index) => (
+              {data.skills.map((skill: string, index: number) => (
                 <li key={index} className="text-sm">{skill}</li>
               ))}
             </ul>
@@ -96,7 +95,7 @@ const PricingAndSkills = () => {
             />
             <YAxis 
               label={{ value: '價格 (USD)', angle: -90, position: 'insideLeft', offset: 10 }}
-              tickFormatter={(value) => `$${value.toLocaleString()}`}
+              tickFormatter={(value: number) => `$${value.toLocaleString()}`}
             />
             <Tooltip content={<CustomTooltip />} />
             <Legend verticalAlign="top" wrapperStyle={{ lineHeight: '40px' }} />
