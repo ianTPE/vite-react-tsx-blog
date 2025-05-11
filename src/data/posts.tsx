@@ -8,9 +8,26 @@ import SecondPostContent from '../components/blog/posts/SecondPost';
 // 動態導入較大的文章組件
 const LowCodeNoCodeMarketTrendsContent = lazy(() => import('../components/blog/posts/low-code-no-code-market-trends-2025-career-transition'));
 const FreelancerGuidePost = lazy(() => import('../components/blog/posts/2025-freelancer-guide-low-code-no-code-development-applications-ranking'));
+const AiPrdDevopsGuidePost = lazy(() => import('../components/blog/posts/ai-prd-devops-integration-guide-2025-new'));
 
 // 文章內容將由 TSX 組件渲染而不是 Markdown
 export const allPosts: BlogPostContent[] = [
+  {
+    slug: 'ai-prd-devops-integration-guide-2025',
+    title: 'AI + PRD + DevOps：軟體開發智能化革命完整指南 2025',
+    description: '深入探討 AI 如何與 PRD（產品需求文件）及 DevOps 結合，實現需求智能化、開發自動化、運維自適應化。涵蓋 10 大產業實際應用案例、技術架構、實施路線圖，幫助企業將軟體開發效率提升 50%。',
+    date: '2025-05-11',
+    author: {
+      name: 'Ian Chou',
+      image: '/images/author.png',
+      bio: 'LC/NC開發者，AI 愛好者',
+    },
+    coverImage: '/images/202505/ai-prd-devops-integration-guide-2025.png',
+    tags: ['AI', 'PRD', 'DevOps', '軟體開發智能化革命'],
+    readTime: 15,
+    ogImage: '/images/202505/ai-prd-devops-integration-guide-2025.png',
+    renderContent: () => <AiPrdDevopsGuidePost />
+  },
   {
     slug: '2025-freelancer-guide-low-code-no-code-development-applications-ranking',
     title: '【2025年自由工作者指南】低代碼/無代碼全端開發6大應用領域完整排名與市場前景分析',
