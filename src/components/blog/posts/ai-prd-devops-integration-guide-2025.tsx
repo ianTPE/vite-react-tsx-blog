@@ -1,5 +1,15 @@
 import React from 'react';
 
+// 導入圖表組件
+import { CoreArchitecture } from '../../charts/CoreArchitecture';
+import { KeyMetrics } from '../../charts/KeyMetrics';
+import { TechStackAdoption } from '../../charts/TechStackAdoption';
+import { IndustryDistribution } from '../../charts/IndustryDistribution';
+import { BenefitComparisonRadar } from '../../charts/BenefitComparisonRadar';
+import { IndustryMaturityAnalysis } from '../../charts/IndustryMaturityAnalysis';
+import { ROITrends } from '../../charts/ROITrends';
+import { RoadmapGantt } from '../../charts/RoadmapGantt';
+
 interface TableData {
   headers: string[];
   rows: string[][];
@@ -62,11 +72,7 @@ const SubSection: React.FC<SectionProps> = ({ title, children }) => (
   </div>
 );
 
-const DiagramBlock: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div className="bg-gray-50 p-6 rounded-lg my-6 text-center">
-    <pre className="font-mono text-sm">{children}</pre>
-  </div>
-);
+// 刪除不再使用的 DiagramBlock 組件
 
 const AiPrdDevopsGuidePost: React.FC = () => {
   const toolsTableData: TableData = {
@@ -174,11 +180,7 @@ const campaignRequirements = socialTrendAnalyzer
 
       <Section title="一、核心架構：三位一體的協同流程">
         <SubSection title="1.1 架構概覽">
-          <DiagramBlock>
-            {`用戶數據 → AI 分析引擎 → 智能 PRD → DevOps 自動化 → 生產環境
-   ↑                                                    ↓
-   └──────────── 運營數據反饋 ←──────────────────────────┘`}
-          </DiagramBlock>
+          <CoreArchitecture />
           <p>這個閉環系統的三個核心組件相互協作：</p>
         </SubSection>
 
@@ -320,20 +322,15 @@ const campaignRequirements = socialTrendAnalyzer
 
       <Section title="三、關鍵技術與工具鏈">
         <Table data={toolsTableData} />
+        <TechStackAdoption />
       </Section>
 
       <Section title="四、產業應用場景深度解析">
+        <IndustryDistribution />
         <SubSection title="4.1 智能製造：預測性維護與產線優化">
           <div className="mb-4">
             <h4 className="font-semibold mb-2">技術架構實施：</h4>
-            <DiagramBlock>
-              {`A[傳感器數據收集] --> B[AI 分析引擎]
-B --> C[PRD 自動更新]
-C --> D[DevOps 部署]
-D --> E[生產系統調整]
-E --> F[運營數據反饋]
-F --> B`}
-            </DiagramBlock>
+            <IndustryMaturityAnalysis />
           </div>
 
           <div className="mb-4">
@@ -464,15 +461,7 @@ F --> B`}
         <SubSection title="4.5 汽車製造：智能駕駛與車聯網">
           <div className="mb-4">
             <h4 className="font-semibold mb-2">技術整合框架：</h4>
-            <DiagramBlock>
-              {`A[車輛傳感數據] --> B[邊緣 AI 處理]
-B --> C[雲端 AI 分析]
-C --> D[需求自動生成]
-D --> E[OTA 更新包]
-E --> F[車輛部署]
-F --> G[用戶反饋收集]
-G --> C`}
-            </DiagramBlock>
+            <CoreArchitecture />
           </div>
 
           <div className="mb-4">
@@ -518,10 +507,13 @@ G --> C`}
 
       <Section title="五、優勢與價值分析">
         <SubSection title="5.1 量化效益評估">
+          <KeyMetrics />
           <Table data={benefitsTableData} />
+          <BenefitComparisonRadar />
         </SubSection>
 
         <SubSection title="5.2 戰略價值分析">
+          <ROITrends />
           <ol className="list-decimal pl-6">
             <li className="mb-4">
               <strong>市場響應敏捷性</strong>
@@ -586,14 +578,15 @@ G --> C`}
         </SubSection>
 
         <SubSection title="6.3 實施路線圖">
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <h4 className="font-semibold mb-4">AI+PRD+DevOps 實施路線圖</h4>
-            <div className="space-y-4">
+          <RoadmapGantt />
+          <div className="mb-6">
+            <h4 className="font-semibold mb-3">分階段實施策略</h4>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
                 <h5 className="font-medium text-blue-600">第一階段：基礎建設</h5>
                 <ul className="list-disc pl-6">
-                  <li>數據治理體系建立（90天）</li>
-                  <li>AI 平台選型與搭建（60天）</li>
+                  <li>數據治理體系搭建（90天）</li>
+                  <li>AI 平台構建（120天）</li>
                   <li>團隊培訓與文化建設（180天）</li>
                 </ul>
               </div>
@@ -616,15 +609,12 @@ G --> C`}
             </div>
           </div>
         </SubSection>
-      </Section>
 
-      <Section title="七、未來展望與趨勢">
-        <SubSection title="7.1 技術演進方向">
+        <SubSection title="7.1 未來展望">
           <ol className="list-decimal pl-6">
             <li className="mb-4">
-              <strong>大語言模型與領域模型融合</strong>
+              <strong>需求理解與代碼生成</strong>
               <ul className="list-disc pl-6 mt-2">
-                <li>GPT-4 等通用模型與垂直領域模型結合</li>
                 <li>實現更精準的需求理解與代碼生成</li>
                 <li>預計準確率可達 98%+</li>
               </ul>
