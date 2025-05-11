@@ -322,10 +322,12 @@ body {
 }
 
 /* 404 頁面 */
+
 .not-found {
   text-align: center;
   padding: 60px 0;
 }
+
 
 /* 響應式設計 */
 @media (max-width: 768px) {
