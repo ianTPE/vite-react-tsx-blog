@@ -1,7 +1,12 @@
+import { lazy } from 'react';
 import { type BlogPostContent } from '../types/blog';
+
+// 靜態導入較小的文章組件
 import FirstPostContent from '../components/blog/posts/FirstPost';
 import SecondPostContent from '../components/blog/posts/SecondPost';
-import LowCodeNoCodeMarketTrendsContent from '../components/blog/posts/low-code-no-code-market-trends-2025-career-transition';
+
+// 動態導入較大的文章組件
+const LowCodeNoCodeMarketTrendsContent = lazy(() => import('../components/blog/posts/low-code-no-code-market-trends-2025-career-transition'));
 
 // 文章內容將由 TSX 組件渲染而不是 Markdown
 export const allPosts: BlogPostContent[] = [

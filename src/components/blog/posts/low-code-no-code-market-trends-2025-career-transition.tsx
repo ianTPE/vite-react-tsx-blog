@@ -1,5 +1,14 @@
-import React from 'react';
-import LowCodeMarketDiagram from '../../charts/low-code-market-diagram';
+import React, { lazy, Suspense } from 'react';
+
+// 動態導入圖表組件
+const LowCodeMarketDiagram = lazy(() => import('../../charts/low-code-market-diagram'));
+
+// 載入中組件
+const ChartLoading = () => (
+  <div className="flex justify-center items-center h-64 bg-gray-50 rounded-lg">
+    <div className="text-gray-500">載入圖表中...</div>
+  </div>
+);
 
 const LowCodeNoCodeMarketTrendsContent: React.FC = () => {
   return (
@@ -33,7 +42,9 @@ const LowCodeNoCodeMarketTrendsContent: React.FC = () => {
 </p>
 
 <div className="w-full overflow-hidden">
-  <LowCodeMarketDiagram />
+  <Suspense fallback={<ChartLoading />}>
+    <LowCodeMarketDiagram />
+  </Suspense>
 </div>
 
 <h3 className="text-xl md:text-2xl font-bold tracking-tight mt-6 mb-3 text-black dark:text-white">市場規模與增長趨勢</h3>

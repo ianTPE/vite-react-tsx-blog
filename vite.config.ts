@@ -15,4 +15,19 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  build: {
+    // 代碼分割設定
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // 將 React 相關的庫分組
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          // 將圖表庫分組
+          'chart-vendor': ['recharts'],
+        },
+      },
+    },
+    // 設定 chunk 大小警告門檻
+    chunkSizeWarningLimit: 1000, // 1MB
+  },
 })
