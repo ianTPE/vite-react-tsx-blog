@@ -142,7 +142,11 @@ body {
 .post-title {
   margin-top: 10px;
   margin-bottom: 10px;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
 }
 
 .post-description {
