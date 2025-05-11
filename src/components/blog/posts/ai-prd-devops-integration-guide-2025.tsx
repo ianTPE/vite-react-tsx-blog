@@ -32,26 +32,11 @@ if (typeof window !== 'undefined') {
 }
 
 const AiPrdDevopsGuidePost = () => {
-  // 文章元數據
-  const metadata = {
-    title: "AI 賦能軟體工程：PRD 與 DevOps 的智能化革命",
-    author: "技術團隊",
-    date: "2025-01-13",
-    tags: ["AI", "PRD", "DevOps", "軟體工程", "數位轉型"]
-  };
+
 
   return (
     <article>
-      {/* 文章元數據 */}
-      <div>
-        <span>作者：{metadata.author}</span>
-        <span> | 發布日期：{metadata.date}</span>
-        <div>
-          {metadata.tags.map((tag, index) => (
-            <span key={index}>#{tag} </span>
-          ))}
-        </div>
-      </div>
+
 
       <h1 id="ai-prd-devops-">AI 賦能軟體工程：PRD 與 DevOps 的智能化革命</h1>
       
@@ -154,7 +139,7 @@ const AiPrdDevopsGuidePost = () => {
         <TechStackAdoption />
       </div>
 
-      <table border="1">
+      <table border={1}>
         <thead>
           <tr>
             <th>領域</th>
@@ -305,7 +290,7 @@ const campaignRequirements = socialTrendAnalyzer
         <BenefitComparisonRadar />
       </div>
 
-      <table border="1">
+      <table border={1}>
         <thead>
           <tr>
             <th>指標類別</th>
