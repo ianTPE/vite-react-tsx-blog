@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import Layout from '../../components/layout/Layout';
 import PostHeader from '../../components/blog/PostHeader';
+import SEO from '../../components/SEO';
 import { getPostBySlug } from '../../data/posts';
 
 const BlogPost: React.FC = () => {
@@ -23,6 +24,15 @@ const BlogPost: React.FC = () => {
 
   return (
     <Layout>
+      <SEO 
+        title={post.title}
+        description={post.description}
+        image={post.ogImage || post.coverImage}
+        article={true}
+        author={post.author.name}
+        publishedTime={post.date}
+        tags={post.tags}
+      />
       <article className="blog-post">
         <PostHeader post={post} />
         <div className="post-content-wrapper">

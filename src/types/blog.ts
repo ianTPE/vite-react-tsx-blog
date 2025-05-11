@@ -11,6 +11,7 @@ export interface BlogPost {
   date: string;
   author: Author;
   coverImage?: string;
+  ogImage?: string; // Open Graph 圖片
   tags: string[];
   readTime?: number; // 閱讀時間（分鐘）
 }

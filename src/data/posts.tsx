@@ -15,6 +15,7 @@ export const allPosts: BlogPostContent[] = [
       bio: 'LC/NC開發者，AI 愛好者',
     },
     coverImage: '/images/first-post.jpg',
+    ogImage: '/images/first-post.jpg', // 使用封面圖片作為 OG 圖片
     tags: ['Vite', 'React', 'TypeScript'],
     readTime: 5,
     renderContent: () => <FirstPostContent />
@@ -30,6 +31,7 @@ export const allPosts: BlogPostContent[] = [
       bio: 'LC/NC開發者，AI 愛好者',
     },
     coverImage: '/images/second-post.jpg',
+    ogImage: '/images/second-post.jpg', // 使用封面圖片作為 OG 圖片
     tags: ['TypeScript', 'React', '最佳實踐'],
     readTime: 7,
     renderContent: () => <SecondPostContent />
